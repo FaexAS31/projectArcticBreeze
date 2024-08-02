@@ -40,3 +40,34 @@ export async function addUser(formData) {
         throw error;
     }
 }
+
+export async function deleteUser(id) {
+    try {
+        const response = await fetch('https://arcticbreezeapi20240729165031.azurewebsites.net/api/Users/' + id, {
+            method: 'DELETE'
+        });
+
+        if (!response.ok) {
+            throw new Error('An error occurred: ' + response.statusText);
+        }
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        throw error;
+    }
+}
+
+export async function updateUser(formData) {
+    try {
+        const response = await fetch('https://arcticbreezeapi20240729165031.azurewebsites.net/api/Users', {
+            method: 'PUT',
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error('An error occurred: ' + response.statusText);
+        }
+    } catch (error) {
+        console.error('Error updating user:', error);
+        throw error;
+    }
+}

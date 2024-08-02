@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+form#productCrudForm {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
