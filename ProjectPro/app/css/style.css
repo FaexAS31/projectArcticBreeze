@@ -45,7 +45,7 @@
 
 #content {
     width: calc(100% - 300px);
-    overflow: hidden;
+    /*overflow: hidden;*/
     background-color: var(--home-color);
 }
 
