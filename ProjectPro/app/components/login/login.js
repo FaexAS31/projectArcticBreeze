@@ -2,8 +2,10 @@ import { toggleContent } from "../../components/sidemenu/sidemenu.js";
 import { updateHeader } from "../../components/header/header.js";
 import { updateSideMenu } from "../../components/sidemenu/sidemenu.js";
 import { menu } from '../sidemenu/settings.js';
-import { validateUser } from "../../js/providers/users.js";
+import { validateUser, addUser } from "../../js/providers/users.js";
 import { clearCart } from "../cart/cart.js";
+
+import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
 export const init = () => {
 	console.log("Initializing Login");
@@ -54,7 +56,6 @@ async function handleLogin(event) {
         let user = await validateUser(email, password);
 
         if (user != null) {
-            console.log("Login successful");
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("login", true);
             
@@ -78,9 +79,25 @@ export function handleLogout() {
 	console.log("User logged out");
 }
 
-function handleSignup(event) {
+async function handleSignup(event) {
     event.preventDefault();
-    console.log("Signup form submitted");
+
+    const form = document.getElementById("signupForm"); 
+    const formData = new FormData(form);
+
+    formData.append("role", "General");
+
+    try {
+        addUser(formData);
+        Swal.fire({
+            title: "Sign up successful!",
+            confirmButtonText: "Continue",
+          }).then(() => {
+            closeLogin();
+          });
+    } catch (error) {
+        console.error('Error handling signup:', error);
+    }
 }
 
 function closeLogin() {
