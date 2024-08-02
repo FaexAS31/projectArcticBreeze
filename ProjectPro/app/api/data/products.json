@@ -1,0 +1,53 @@
+{   
+    "status": 0,
+    "products": [
+        {
+            "ProductID": "AC001",
+            "ProductName": "Air Conditioner Model X",
+            "ProductType": "product",
+            "Description": "High-efficiency air conditioner with smart control.",
+            "Price": 499.99,
+            "Image": "/lastDance5to/ProjectPro/app/api/photos/products/ac_model_x.jpeg"
+        },
+        {
+            "ProductID": "AC002",
+            "ProductName": "Air Conditioner Model Y",
+            "ProductType": "product",
+            "Description": "Compact air conditioner with eco-friendly cooling.",
+            "Price": 349.99,
+            "Image": "/lastDance5to/ProjectPro/app/api/photos/products/ac_model_x.jpeg"
+        },
+        {
+            "ProductID": "S001",
+            "ProductName": "Temperature Sensor Pro",
+            "ProductType": "installation",
+            "Description": "Advanced temperature sensor for precise monitoring.",
+            "Price": 89.95,
+            "Image": "/lastDance5to/ProjectPro/app/api/photos/products/ac_model_x.jpeg"
+        },
+        {
+            "ProductID": "S002",
+            "ProductName": "Humidity Sensor X",
+            "ProductType": "installation",
+            "Description": "Sensor for monitoring humidity levels in installations.",
+            "Price": 105.50,
+            "Image": "/lastDance5to/ProjectPro/app/api/photos/products/ac_model_x.jpeg"
+        },
+        {
+            "ProductID": "AC003",
+            "ProductName": "Air Conditioner Model Z",
+            "ProductType": "product",
+            "Description": "Premium air conditioner with air purification system.",
+            "Price": 799.99,
+            "Image": "/lastDance5to/ProjectPro/app/api/photos/products/ac_model_x.jpeg"
+        },
+        {
+            "ProductID": "S003",
+            "ProductName": "Pressure Sensor Elite",
+            "ProductType": "installation",
+            "Description": "High-precision pressure sensor for HVAC systems.",
+            "Price": 120.75,
+            "Image": "/lastDance5to/ProjectPro/app/api/photos/products/ac_model_x.jpeg"
+        }
+    ]
+}

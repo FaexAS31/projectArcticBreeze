@@ -1,0 +1,46 @@
+#layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+}
+
+svg {
+    width: 100%;
+    max-width: 60%;
+    height: auto;
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+}
+text {
+    font-family: var(--normal-text);
+    font-size: 12px;
+    fill: #333;
+}
+
+#sensor{
+    fill: #ff0202;
+    stroke: #000;
+    stroke-width: 1;
+    opacity: 0.5;
+}
+
+#sensor-text{
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#legend-title{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#legend-text{
+    font-size: 14px;
+    font-weight: bolder;
+    
+}

@@ -1,0 +1,126 @@
+#sidemenu {
+    width: 300px;
+    background-color: var(--side-menu-bg)
+}
+
+#side-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: var(--side-menu);
+}
+
+#icon-house {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+}
+
+#side-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    color: #DDF2FD;
+}
+
+#icon-down-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+}
+
+
+.sidemenu-option {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--side-menu);
+    font-family: monospace;
+}
+
+.sidemenu-icon {
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+    background: #1f212b;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidemenu-icon i {
+    font-size: 16pt;
+    color: var(--side-menu)
+}
+
+.sidemenu-text {
+    width: calc(100% - 100px);
+    height: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
+.sidemenu-text label {
+    font-size: 15pt;font-color:var(--font-color);
+    color: var(--side-menu);
+    cursor: pointer;
+}
+
+.sidemenu-arrow {
+    font-size: 12pt;
+    color: var(--side-menu);
+    cursor: pointer;
+}
+
+
+.subMenuIcon {
+    cursor: pointer;
+}
+
+.divSubOption {
+    position: relative;
+    float: left;
+    height: 42px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--side-menu);
+    font-family: monospace;
+}
+
+.divSubOption label {
+    font-size: 16pt;
+    font-weight: bold;
+    color: var(--side-menu);
+    cursor: pointer;
+}
+
+.subMenu-selector {
+    display: flex;
+    cursor: pointer;
+}
+
+.subMenu-text{
+    font-size: 15px;
+    padding-left: 30px;
+}

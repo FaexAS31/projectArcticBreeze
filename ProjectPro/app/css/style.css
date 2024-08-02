@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--normal-text);
+}
+:root {
+    /* Modules */
+    --home: #F44336;
+    --dashboard: #9C27B0;
+    --layout: #2196F3;
+    --settings: #8BC34A;
+    --logs: #FFC107;
+    --header-color: #fff;
+    --side-menu: rgb(255, 255, 255);
+    --side-menu-bg: #182A33;
+    --home-color: #ECECEC;
+    --footer-color: #000;
+    --icon-color: #2D5264;
+    --content-header: #b1c5cc;
+    --font-color: #000;
+
+    /* Fonts */
+    --normal-text: "Nunito Sans", sans-serif;
+
+  }
+
+
+
+.dark-theme {
+    --header-color: #27404D;
+    --side-menu: #5d7c8e;
+    --side-menu-bg: #18262F;
+    --home-color: #1e1e1efa;
+    --footer-color: #000;
+    --icon-color: #78929d;
+    --content-header: #354A52;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 100px);
+    width: 100%;
+}
+
+#content {
+    width: calc(100% - 300px);
+    overflow: hidden;
+    background-color: var(--home-color);
+}
+
+#content-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-color);
+    font-family: var(--normal-text);
+    background-color: var(--content-header);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+

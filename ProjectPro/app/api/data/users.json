@@ -1,0 +1,18 @@
+{
+    "status": 0,
+    "user": {
+        "name": "John Smith",
+        "role": {
+            "id": "admin",
+            "name": "Administrator"
+        },
+        "preferences": {
+            "language": {
+                "id": "EN",
+                "name": "English"
+            },
+            "theme": "dark"
+        },
+        "photo": "http://localhost/lastDance5to/ProjectPro/app/api/photos/users/jsmith.jpg"
+    }
+}

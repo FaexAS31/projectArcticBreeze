@@ -1,0 +1,36 @@
+<!--style sheet-->
+<link rel="stylesheet" href="components/cart/cart.css">
+<!--html goes here-->
+<div id="announcement"></div>
+<div id="cart-screen">
+    <div id="cart">
+        <div id="cart-content"></div>
+        <template id="template-product">
+            <div id="product-container" class="product-container">
+                <img id="delete" class="delete-button" src="./api/photos/cart/delete.png" alt="Delete Product">
+                <div class="product">
+                    <div class="product-image">
+                        <img id="product-img" src="" alt="Product Image">
+                    </div>
+                    <div class="product-info">
+                        <div id="product-name"></div>
+                    </div>
+                </div>
+                <div class="quantity-controls">
+                    <img id="reduce" class="quantity-button" src="./api/photos/cart/reduce.png" alt="Reduce Quantity">
+                    <span id="product-count" class="product-count"></span>
+                    <img id="increase" class="quantity-button" src="./api/photos/cart/increase.png" alt="Increase Quantity">
+                </div>
+                <div id="product-price" class="product-price"></div>
+            </div>
+        </template>
+    </div>
+    <div id="check-out-div">
+        <div id="partition"></div>
+        <div id="check-out">
+            <div id="total-price">Total Price: $<span id="total-price-value"></span></div>
+            <button id="checkout-button">Proceed to checkout</button>
+        </div>
+    </div>
+    
+</div>

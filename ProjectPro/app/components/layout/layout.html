@@ -1,0 +1,65 @@
+<!--style sheet-->
+<link rel="stylesheet" href="components/layout/layout.css">
+<!--html goes here-->
+<div id ="layout">
+    <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Floors -->
+        <text x="20" y="180" text-anchor="middle" dominant-baseline="middle" font-size="18">F1</text>
+        <text x="20" y="60" text-anchor="middle" dominant-baseline="middle" font-size="18">F2</text>
+        
+        <!-- Dir -->
+        <rect x="50" y="20" width="120" height="120" stroke="black" fill="none"/>
+        <text x="110" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">D1</text>
+        
+        <rect x="50" y="160" width="120" height="120" stroke="black" fill="none"/>
+        <text x="110" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">D2</text>
+        
+        <!-- Labs -->
+        <rect x="180" y="20" width="160" height="120" stroke="black" fill="none"/>
+        <text x="260" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">L1</text>
+        
+        <rect x="350" y="20" width="160" height="120" stroke="black" fill="none"/>
+        <text x="430" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">L2</text>
+        
+        <rect x="180" y="160" width="160" height="120" stroke="black" fill="none"/>
+        <text x="260" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">L3</text>
+        
+        <rect x="350" y="160" width="160" height="120" stroke="black" fill="none"/>
+        <text x="430" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">L4</text>
+        
+        <!-- CRooms -->
+        <rect x="520" y="20" width="120" height="120" stroke="black" fill="none"/>
+        <text x="580" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">C1</text>
+        
+        <rect x="650" y="20" width="120" height="120" stroke="black" fill="none"/>
+        <text x="710" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">C2</text>
+        
+        <rect x="520" y="160" width="120" height="120" stroke="black" fill="none"/>
+        <text x="580" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">C3</text>
+        
+        <rect x="650" y="160" width="120" height="120" stroke="black" fill="none"/>
+        <text x="710" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">C4</text>
+        
+        <!-- Stairs -->
+        <line x1="180" y1="140" x2="340" y2="140" stroke="black" />
+        <line x1="180" y1="145" x2="340" y2="145" stroke="black" />
+        <line x1="180" y1="150" x2="340" y2="150" stroke="black" />
+        <line x1="180" y1="155" x2="340" y2="155" stroke="black" />
+        
+        <!-- Sensor -->
+        <rect id="sensor" x="350" y="25" width="160" height="40" stroke="red" fill="none"/>
+        <text id="sensor-text" x="430" y="50" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="red">SENSOR 1</text>
+        
+         <!-- Legend -->
+        <text id="legend-title" x="50" y="320" font-size="18">Legend:</text>
+        
+        <text id="legend-text" x="80" y="350">F1: Floor 1</text>
+        <text id="legend-text" x="80" y="380">F2: Floor 2</text>
+        <text id="legend-text" x="220" y="350">D1, D2: Direction Offices</text>
+        <text id="legend-text" x="220" y="380">L1, L2, L3, L4: Laboratories</text>
+        <text id="legend-text" x="470" y="350">C1, C2, C3, C4: Classrooms</text>
+        <text id="legend-text" x="470" y="380">Sensor 1: Monitoring Sensor</text>
+    </svg>
+      
+      
+</div>
