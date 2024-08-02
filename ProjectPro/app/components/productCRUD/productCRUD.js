@@ -1,19 +1,21 @@
-import { getProducts, addProduct, deleteProduct, updateProduct  } from '../../js/providers/products.js';
+import { getProducts, addProduct, deleteProduct, updateProduct } from '../../js/providers/products.js';
+import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
-const products = await getProducts();
-console.log(products);
 
-export const init = () => {
+export const init = async () => {
     const productCrudForm = document.getElementById("productCrudForm");
     productCrudForm.addEventListener("submit", (e) => addFormProduct(e));
 
-    loadProducts();
-
+    await loadProducts();
 };
 
 async function loadProducts() {
     const tableBody = document.querySelector('#productTable tbody');
     tableBody.innerHTML = '';
+
+    const products = await getProducts(); 
+    console.log(products);
+
     products.forEach((product, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -23,14 +25,25 @@ async function loadProducts() {
             <td>${product.description}</td>
             <td>${product.price.toFixed(2)}</td>
             <td><img src="https://arcticbreeze.blob.core.windows.net/productocontenedor/${product.productImage}" alt="${product.productName}" width="50"></td>
-            <td>
-                <button id="edit-btn">Edit</button>
-                <button id="delete-btn">Delete</button>
+            <td id="buttons">
+                <button class="edit-btn" data-id="${product.productID}">Edit</button>
+                <button class="delete-btn" data-id="${product.productID}">Delete</button>
             </td>
         `;
+
         tableBody.appendChild(row);
+
+        const editBtn = row.querySelector('.edit-btn');
+        if (editBtn) {
+            editBtn.addEventListener('click', () => handleProductSelection(product.productID));
+        }
+
+        const deleteBtn = row.querySelector('.delete-btn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', () => deleteFormProduct(product.productID));
+        }
     });
-};
+}
 
 async function addFormProduct(event) {
     event.preventDefault();
@@ -39,28 +52,31 @@ async function addFormProduct(event) {
     const formData = new FormData(form);
 
     try {
-        addProduct(formData);
+        await addProduct(formData); 
         Swal.fire({
-            title: "Sign up successful!",
+            title: "Product added successfully!",
             confirmButtonText: "Continue",
-          });
+        });
+        await loadProducts(); 
     } catch (error) {
-        console.error('Error handling signup:', error);
+        console.error('Error handling product addition:', error);
     }
 }
 
 async function deleteFormProduct(productID) {
     Swal.fire({
-        title: "Are you sure to process?",
+        title: "Are you sure to delete this product?",
         showDenyButton: true,
         confirmButtonText: "Remove",
         denyButtonText: `Cancel`,
-      }).then((result) => {
+    }).then(async (result) => {
         if (result.isConfirmed) {
-            deleteProduct(productID);
+            await deleteProduct(productID);
+            await loadProducts(); 
         }
-      });
-    init();
+    });
 }
 
-
+function handleProductSelection(productId) {
+    console.log(`Product selected: ${productId}`);
+}
