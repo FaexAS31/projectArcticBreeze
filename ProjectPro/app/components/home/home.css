@@ -244,6 +244,9 @@ h1, h2, h3, h4, h5, h6{
     .flex{
         flex-wrap:wrap;
     }
+    #body{
+        height:1150px;
+    }
     
     .padding_1x, .padding_2x, .padding_3x, .padding_4x{
         padding:1rem;

@@ -1,4 +1,4 @@
-import { getProducts, addProduct, deleteProduct, updateProduct } from '../../js/providers/products.js';
+import { getProducts, addProduct, deleteProduct, updateProduct, getNewID } from '../../js/providers/products.js';
 import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
 
@@ -50,6 +50,10 @@ async function addFormProduct(event) {
 
     const form = document.getElementById("productCrudForm"); 
     const formData = new FormData(form);
+
+    let newID = getNewID();
+
+    formData.append("productID", newID);
 
     try {
         await addProduct(formData); 
