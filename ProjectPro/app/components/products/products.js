@@ -1,6 +1,8 @@
 import { getProducts } from "../../js/providers/products.js";
 import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
+import { toggleContent } from "../sidemenu/sidemenu.js";
+
 export const init = () => {
   console.log("Initializing Products...");
   getProducts().then((response) => {
@@ -32,6 +34,16 @@ function showProducts(data) {
         }else{
           templateContent.querySelector('#product-img').src = "https://arcticbreeze.blob.core.windows.net/productocontenedor/"+d.productImage;
         }
+
+        
+        let productbutton = templateContent.querySelector('#product-button');
+        productbutton.dataset.productId = d.productID;
+
+        productbutton.addEventListener('click', (e) => {
+          let productId = e.currentTarget.dataset.productId;
+          loadProductDetails(productId);
+        });
+
         let button = templateContent.querySelector('#cart-button');
         button.dataset.productId = d.productID;
 
@@ -68,6 +80,33 @@ function handleProductSelection(productId) {
       console.log(`Product ${productId} selected ${counts[productId]} times.`);
       Swal.fire("Product Added!", "", "success");
     } 
+  });
+}
+
+function loadProductDetails(productId) {
+  getProducts().then((data) => {
+      // Find the product with the given ID
+      const product = data.find(p => p.productID === productId);
+
+      if (product) {
+
+          console.log(`Viewing product details for product ${productId}`);
+
+          localStorage.setItem('productDetails', JSON.stringify(product));
+        
+          let productDetails ={
+            module: "productDetails",
+            parent: "content",
+            url: "components/productDetails"
+          };
+        
+          toggleContent(productDetails);
+          
+      } else {
+          console.error('Product not found');
+      }
+  }).catch(error => {
+      console.error('Error fetching products:', error);
   });
 }
 
