@@ -29,7 +29,7 @@ function drawMenu(user) {
 }
 
 function drawMenuOption(option,user) {
-  // if(option.module === 'adminPanel' && user.role != "Admin") return;
+  if(option.module === 'adminPanel' && user.role != "Admin") return;
 
 
   const parent = document.getElementById("sidemenu");

@@ -70,6 +70,7 @@ async function deleteFormProduct(productID) {
         confirmButtonText: "Remove",
         denyButtonText: `Cancel`,
     }).then(async (result) => {
+        console.log("Product ID: ", productID);
         if (result.isConfirmed) {
             await deleteProduct(productID);
             await loadProducts(); 
@@ -77,6 +78,6 @@ async function deleteFormProduct(productID) {
     });
 }
 
-function handleProductSelection(productId) {
+function editFormProduct(productId) {
     console.log(`Product selected: ${productId}`);
 }

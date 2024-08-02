@@ -23,7 +23,9 @@ function setButtons() {
         url: "components/saleCRUD",
     };
 
-    document.getElementById("product-btn").addEventListener("click", () => toggleContent(product));
-    document.getElementById("user-btn").addEventListener("click", () => toggleContent(users));
-    document.getElementById("sale-btn").addEventListener("click", () => toggleContent(sales));
+    if(document.getElementById("product-btn") !== null){
+        document.getElementById("product-btn").addEventListener("click", () => toggleContent(product));
+        document.getElementById("user-btn").addEventListener("click", () => toggleContent(users));
+        document.getElementById("sale-btn").addEventListener("click", () => toggleContent(sales));
+    }
 }

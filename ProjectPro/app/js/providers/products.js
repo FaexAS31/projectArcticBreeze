@@ -26,7 +26,10 @@ export async function addProduct(formData) {
 export async function deleteProduct(id) {
     try {
         const response = await fetch('https://arcticbreezeapi20240729165031.azurewebsites.net/api/Products/' + id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                mode: 'no-cors'
+            }
         });
 
         if (!response.ok) {
