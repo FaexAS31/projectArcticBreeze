@@ -61,7 +61,8 @@ export const init = () => {
     }
     Highcharts.chart('container-spline', {
         chart: {
-        type: 'spline'
+        type: 'spline',
+        backgroundColor: 'transparent'
         },
         title: {
         text: 'Monthly Average Temperature'
@@ -102,7 +103,7 @@ export const init = () => {
             symbol: 'square'
         },
         data: [{
-            y: 1.5,
+            y: 22,
             marker: {
                 symbol: 'url(../app/api/photos/charts/low-temp.png)',
                 width: 56,
@@ -112,8 +113,8 @@ export const init = () => {
             description: 'Snowy symbol, this is the coldest point in the ' +
                 'chart.'
             }
-        },5.7, 8.7, 13.9, 18.2, 21.4, 25.0, {
-            y: 26.4,
+        },24, 26, 27, 25, 24,{
+            y: 28,
             marker: {
             symbol: 'url(../app/api/photos/charts/high-temp.png)',
             width: 56,
@@ -123,7 +124,7 @@ export const init = () => {
             description: 'Sunny symbol, this is the warmest point in the ' +
                 'chart.'
             }
-        }, 22.8, 17.5, 12.1, 7.6]
+        }, 24, 23, 23, 23, 22]
     
         }], 
     });
@@ -133,7 +134,8 @@ export const init = () => {
             table: 'datatable'
         },
         chart: {
-            type: 'column'
+            type: 'column',
+            backgroundColor: 'transparent' 
         },
         title: {
             text: 'Energy Consumption, humitity and temperature'
@@ -146,6 +148,161 @@ export const init = () => {
             title: {
                 text: 'Amount'
             }
-        }
+        },
+        series: [{
+            name: 'Highest Value',
+            color: '#d88484' 
+        }, {
+            name: 'Lowest Value',
+            color: '#8596bb'  
+        }],
     });
+
+    // // Gauge chart
+    // const gaugeOptions = {
+    //     chart: {
+    //         type: 'solidgauge'
+    //     },
+    
+    //     title: null,
+    
+    //     pane: {
+    //         center: ['50%', '85%'],
+    //         size: '140%',
+    //         startAngle: -90,
+    //         endAngle: 90,
+    //         background: {
+    //             backgroundColor: 'transparent',
+    //             borderRadius: 5,
+    //             innerRadius: '60%',
+    //             outerRadius: '100%',
+    //             shape: 'arc'
+    //         }
+    //     },
+    
+    //     exporting: {
+    //         enabled: false
+    //     },
+    
+    //     tooltip: {
+    //         enabled: false
+    //     },
+    
+    //     yAxis: {
+    //         stops: [
+    //             [0.1, '#55BF3B'], // green
+    //             [0.5, '#DDDF0D'], // yellow
+    //             [0.9, '#DF5353'] // red
+    //         ],
+    //         lineWidth: 0,
+    //         tickWidth: 0,
+    //         minorTickInterval: null,
+    //         tickAmount: 2,
+    //         title: {
+    //             y: -70
+    //         },
+    //         labels: {
+    //             y: 16
+    //         }
+    //     },
+    
+    //     plotOptions: {
+    //         solidgauge: {
+    //             borderRadius: 3,
+    //             dataLabels: {
+    //                 y: 5,
+    //                 borderWidth: 0,
+    //                 useHTML: true
+    //             }
+    //         }
+    //     }
+    // };
+    
+    // const chartSpeed = Highcharts.chart(
+    //     'container-speed', Highcharts.merge(gaugeOptions, {
+    //         yAxis: {
+    //             min: 0,
+    //             max: 200,
+    //             title: {
+    //                 text: 'Electric Consumption'
+    //             }
+    //         },
+    
+    //         credits: {
+    //             enabled: false
+    //         },
+    
+    //         series: [{
+    //             name: 'Electric Consumption',
+    //             data: [results.averageElectricConsumption],
+    //             dataLabels: {
+    //                 format:
+    //                 '<div style="text-align:center">' +
+    //                 '<span style="font-size:25px">{y}</span><br/>' +
+    //                 '<span style="font-size:12px;opacity:0.4">km/h</span>' +
+    //                 '</div>'
+    //             },
+    //             tooltip: {
+    //                 valueSuffix: ' km/h'
+    //             }
+    //         }]
+    
+    //     }));
+    
+    // const chartRpm = Highcharts.chart(
+    //     'container-rpm', Highcharts.merge(gaugeOptions, {
+    //         yAxis: {
+    //             min: 0,
+    //             max: 5,
+    //             title: {
+    //                 text: 'Humidity'
+    //             }
+    //         },
+    
+    //         series: [{
+    //             name: 'Humidity',
+    //             data: [results.averageHumidity],
+    //             dataLabels: {
+    //                 format:
+    //                 '<div style="text-align:center">' +
+    //                 '<span style="font-size:25px">{y:.1f}</span><br/>' +
+    //                 '<span style="font-size:12px;opacity:0.4">' +
+    //                 '* 1000 / min' +
+    //                 '</span>' +
+    //                 '</div>'
+    //             },
+    //             tooltip: {
+    //                 valueSuffix: ' revolutions/min'
+    //             }
+    //         }]
+    
+    //     }));
+    // const chartTemperature = Highcharts.chart(
+    //     'container-temp', Highcharts.merge(gaugeOptions, {
+    //         yAxis: {
+    //             min: 0,
+    //             max: 100,
+    //             title: {
+    //                 text: 'Temperature'
+    //             }
+    //         },
+    
+    //         series: [{
+    //             name: 'Temperature',
+    //             data: [results.averageTemperature],
+    //             dataLabels: {
+    //                 format:
+    //                 '<div style="text-align:center">' +
+    //                 '<span style="font-size:25px">{y}</span><br/>' +
+    //                 '<span style="font-size:12px;opacity:0.4">°C</span>' +
+    //                 '</div>'
+    //             },
+    //             tooltip: {
+    //                 valueSuffix: ' °C'
+    //             }
+    //         }]
+    
+    //     }));
+    
 }
+

@@ -4,7 +4,7 @@
     <div id="productForm" class="hidden">
         <h2 id="formTitle">Add Product</h2>
         <form id="productCrudForm">
-            <input type="hidden" id="productID" name="productID">
+            <!-- <input type="hidden" id="productID" name="productID"> -->
             <label for="productName">Product Name:</label>
             <input type="text" id="productName" name="productName" required><br>
             <select id="productType" name="productType" required>
@@ -22,7 +22,30 @@
             <button type="button" id="hide-form">Cancel</button>
         </form>
     </div>
-
+    
+    <div id="editProductForm" class="overlay hidden">
+        <div class="form-container">
+            <h2 id="editFormTitle">Edit Product</h2>
+            <form id="productEditForm">
+                <input type="hidden" id="editProductID" name="productID">
+                <label for="editProductName">Product Name:</label>
+                <input type="text" id="editProductName" name="productName" required><br>
+                <select id="editProductType" name="productType" required>
+                    <option value="">Select Type</option>
+                    <option value="product">Product</option>
+                    <option value="installation">Installation</option>
+                </select><br>
+                <label for="editDescription">Description:</label>
+                <textarea id="editDescription" name="description" required></textarea><br>
+                <label for="editPrice">Price:</label>
+                <input type="number" id="editPrice" name="price" step="0.01" required><br>
+                <label for="editProductImage">Product Image:</label>
+                <input type="file" accept="image/*" id="editProductImage" name="productImage"><br>
+                <button type="submit">Submit</button>
+                <button type="button" id="hide-edit-form">Cancel</button>
+            </form>
+        </div>
+    </div>
     <table id="productTable">
         <thead>
             <tr>

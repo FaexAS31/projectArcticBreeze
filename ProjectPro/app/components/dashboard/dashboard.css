@@ -5,8 +5,23 @@
     margin: 1em auto;
 }
 
+.highcharts-gauge{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#container-speed #container-rpm #container-temp{
+    width: 400px;
+    height: 300px;
+}
+
 #container-spline #container {
     height: 450px;
+}
+
+#content-dashboard {
+    margin: 65px;
 }
 
 #datatable,

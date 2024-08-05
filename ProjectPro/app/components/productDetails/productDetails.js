@@ -42,7 +42,7 @@ function showProductDetails(product) {
     });
 
 
-    let button = productDetails.querySelector('#cart-button');
+    let button = productDetails.querySelector('#cart-icon');
     button.dataset.productId = product.productID;
 
     button.addEventListener('click', (e) => {

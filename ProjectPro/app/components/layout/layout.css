@@ -1,12 +1,9 @@
-#layout{
+#layout {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 90px;
     width: 1306px;
-    height: 348px;
     overflow: hidden;
-    
 }
 
 svg {
@@ -27,11 +24,13 @@ text {
     stroke: #000;
     stroke-width: 1;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 #sensor-text{
     font-size: 24px;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 #legend-title{

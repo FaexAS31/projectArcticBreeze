@@ -1,10 +1,13 @@
-import { getProducts, addProduct, deleteProduct, updateProduct, getNewID } from '../../js/providers/products.js';
+import { getProducts, addProduct, deleteProduct, updateProduct, getNewID, getProductById } from '../../js/providers/products.js';
 import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
 
 export const init = async () => {
     const productCrudForm = document.getElementById("productCrudForm");
     productCrudForm.addEventListener("submit", (e) => addFormProduct(e));
+
+    const productEditForm = document.getElementById("productEditForm");
+    productEditForm.addEventListener("submit", (e) => updateFormProduct(e));
 
     await loadProducts();
 };
@@ -51,10 +54,6 @@ async function addFormProduct(event) {
     const form = document.getElementById("productCrudForm"); 
     const formData = new FormData(form);
 
-    let newID = getNewID();
-
-    formData.append("productID", newID);
-
     try {
         await addProduct(formData); 
         Swal.fire({
@@ -82,6 +81,47 @@ async function deleteFormProduct(productID) {
     });
 }
 
-function editFormProduct(productId) {
-    console.log(`Product selected: ${productId}`);
+async function handleProductSelection(productID) {
+    const product = await getProductById(productID);
+    if (product) {
+        showEditProductForm(product);
+    }
 }
+
+function showEditProductForm(product) {
+    document.getElementById('editProductID').value = product.productID;
+    document.getElementById('editProductName').value = product.productName;
+    document.getElementById('editProductType').value = product.productType;
+    document.getElementById('editDescription').value = product.description;
+    document.getElementById('editPrice').value = product.price;
+
+    document.getElementById('editProductForm').classList.remove('hidden');
+    document.querySelector('.overlay').style.display = 'flex';
+}
+
+async function updateFormProduct(event) {
+    event.preventDefault();
+
+    const form = document.getElementById("productEditForm");
+    const formData = new FormData(form);
+    const productID = document.getElementById("editProductID").value; 
+
+    try {
+        await updateProduct(productID, formData); // Pasar el ID y los datos del formulario
+        Swal.fire({
+            title: "Product updated successfully!",
+            confirmButtonText: "Continue",
+        });
+        await loadProducts();
+        hideEditProductForm();
+    } catch (error) {
+        console.error('Error handling product update:', error);
+    }
+}
+
+function hideEditProductForm() {
+    document.getElementById('editProductForm').classList.add('hidden');
+    document.querySelector('.overlay').style.display = 'none';
+}
+
+document.getElementById('hide-edit-form').addEventListener('click', hideEditProductForm);

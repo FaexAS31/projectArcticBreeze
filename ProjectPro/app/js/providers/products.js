@@ -9,6 +9,14 @@ export async function getProducts() {
 
 export async function addProduct(formData) {
     try {
+        let newID = await getNewID();
+        formData.append('productID', newID);
+        
+        // Verificar contenido de formData
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+
         const response = await fetch('https://arcticbreezeapi20240729165031.azurewebsites.net/api/Products', {
             method: 'POST',
             body: formData
@@ -22,6 +30,8 @@ export async function addProduct(formData) {
         throw error;
     }
 }
+
+
 
 export async function deleteProduct(id) {
     console.log('Delete', id);
@@ -58,17 +68,36 @@ export async function updateProduct(id,formData) {
     }
 }
 
-export function getNewID() {
-    getProducts().then((products) => {
+export async function getNewID() {
+    try {
+        const products = await getProducts();
         console.log(products);
-        let lastID = products[products.length-1].productID;
+
+        if (products.length === 0) {
+            return "P001";
+        }
+
+        let lastID = products[products.length - 1].productID;
         console.log(lastID);
         let position = lastID.indexOf('0');
 
-        let newID = parseInt(lastID.slice(position+1))+1;
+        let newID = parseInt(lastID.slice(position + 1)) + 1;
         console.log(newID);
-        newID = "P00"+newID;
-        console.log(newID+" final");
+        newID = "P00" + newID;
+        console.log(newID + " final");
         return newID;
-    });
+    } catch (error) {
+        console.error('Error getting new ID:', error);
+        throw error;
+    }
+}
+
+export async function getProductById(id) {
+    try {
+        const products = await getProducts();
+        return products.find(p => p.productID === id);
+    } catch (error) {
+        console.error('Error getting product:', error);
+        throw error;
+    }
 }

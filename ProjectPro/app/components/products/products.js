@@ -44,7 +44,7 @@ function showProducts(data) {
           loadProductDetails(productId);
         });
 
-        let button = templateContent.querySelector('#cart-button');
+        let button = templateContent.querySelector('#cart-icon');
         button.dataset.productId = d.productID;
 
         button.addEventListener('click', (e) => {
