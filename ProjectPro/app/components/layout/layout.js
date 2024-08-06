@@ -2,7 +2,7 @@ import { toggleContent } from '../../components/sidemenu/sidemenu.js';
 import { menu } from '../sidemenu/settings.js';
 
 export const init = () => {
-    console.log('Initializing Layout');
+    //console.log('Initializing Layout');
     handleSensorClick();
 
 };

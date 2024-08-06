@@ -8,8 +8,8 @@ export async function loadComponent(options) {
     var requestUrl = componentUrl + '.html' + '?a=' + now.getTime();
     var moduleUrl = componentUrl + '.js';
     // Get component
-    console.log('Loading Component ' + requestUrl);
-    console.log(document.getElementById(options.parent));
+    //console.log('Loading Component ' + requestUrl);
+    //console.log(document.getElementById(options.parent));
     return await fetch(requestUrl, {
         headers: {
             'pragma': 'no-cache',
@@ -24,7 +24,7 @@ export async function loadComponent(options) {
 
 // Import module
 async function importModule(moduleUrl) {
-    console.log('Importing Module ' + moduleUrl);
+    //console.log('Importing Module ' + moduleUrl);
     let { init } = await import(moduleUrl);
     init();
 }

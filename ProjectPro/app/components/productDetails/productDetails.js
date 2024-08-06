@@ -11,15 +11,15 @@ export const init = () => {
   let product = JSON.parse(localStorage.getItem('productDetails')) || {};
 
   if (product) {
-    console.log("Hola");
-    console.log(product);
+    //console.log("Hola");
+    //console.log(product);
     showProductDetails(product);
   }
 };
 
 
 function showProductDetails(product) {
-    console.log('Showing Product Details...');
+    //console.log('Showing Product Details...');
 
     let productDetails = document.getElementById('product-details');
     
@@ -27,7 +27,7 @@ function showProductDetails(product) {
     productDetails.querySelector('#product-price').textContent = "$"+product.price;
     productDetails.querySelector('#product-description').textContent = product.description;
 
-    console.log("https://arcticbreeze.blob.core.windows.net/productocontenedor/"+product.productImage);
+    //console.log("https://arcticbreeze.blob.core.windows.net/productocontenedor/"+product.productImage);
     if(product.productImage == null || product.productImage == ""){
       productDetails.querySelector('#product-img').src = "../../api/photos/products/ac_model_x.jpeg";
     }else{
@@ -69,7 +69,7 @@ function handleProductSelection(productId) {
     
       localStorage.setItem('productCounts', JSON.stringify(counts));
     
-      console.log(`Product ${productId} selected ${counts[productId]} times.`);
+      //console.log(`Product ${productId} selected ${counts[productId]} times.`);
       Swal.fire("Product Added!", "", "success");
     } 
   });

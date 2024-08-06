@@ -18,10 +18,6 @@ function loadSaleDetails() {
             <td>${detail.productID}</td>
             <td>${detail.quantity}</td>
             <td>${detail.unitPrice.toFixed(2)}</td>
-            <td>
-                <button onclick="editSaleDetail(${detail.saleDetailID})">Edit</button>
-                <button onclick="deleteSaleDetail(${detail.saleDetailID})">Delete</button>
-            </td>
         `;
         tableBody.appendChild(row);
     });

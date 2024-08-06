@@ -4,7 +4,7 @@ export function init() {
     
     loadComponent({parent:'slider', url:'components/slider'});
     
-    console.log('Slider component loaded');
+    //console.log('Slider component loaded');
 
     let currentIndex = 0;
     const slides = document.querySelectorAll('.slide');

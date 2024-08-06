@@ -8,7 +8,7 @@ var lang = "EN";
 const eventRegistry = new WeakMap();
 
 export const init = () => {
-  console.log("Initializing header");
+  //console.log("Initializing header");
   const headerMenu = document.getElementById("header-menu");
 
   // Check if the event is already registered
@@ -26,9 +26,9 @@ async function updateHeaderContent() {
   const loginStatus = localStorage.getItem('login') === 'true';
   const container = document.getElementById('header-right');
 
-  console.log("Updating header content...", loginStatus);
-  console.log("User: ", localStorage.getItem("user"));
-  console.log("Login: ", localStorage.getItem('login'));
+  //console.log("Updating header content...", loginStatus);
+  //console.log("User: ", localStorage.getItem("user"));
+  //console.log("Login: ", localStorage.getItem('login'));
   
   if (loginStatus) {
     let user = JSON.parse(localStorage.getItem('user'));
@@ -72,18 +72,18 @@ async function updateHeaderContent() {
 
       if (user) {
           try {
-              console.log(user);
+              //console.log(user);
               user = JSON.parse(user);
-              console.log(user);
+              //console.log(user);
               document.getElementById("img-user-photo").src = "https://arcticbreeze.blob.core.windows.net/usuariocontenedor/" + user.imagePath;
               document.getElementById("label-user-name").textContent = user.name + " " + user.lastName;
               document.getElementById("label-user-role").textContent = user.role;
-              console.log("User data updated.");
+              //console.log("User data updated.");
           } catch (error) {
               console.error("Error parsing user data:", error);
           }
       } else {
-          console.log("No user data found.");
+          //console.log("No user data found.");
       }
   } else {
       const existingUserPhoto = document.getElementById('img-user-photo');
@@ -119,7 +119,7 @@ function getLanguage() {
 function toggleLanguage() {
   lang = getLanguage() === "EN" ? "ES" : "EN";
   document.getElementById("label-lang").textContent = lang;
-  console.log("Toggle language...");
+  //console.log("Toggle language...");
   
   const event = new CustomEvent("languageToggled", { detail: { lang } });
   window.dispatchEvent(event);

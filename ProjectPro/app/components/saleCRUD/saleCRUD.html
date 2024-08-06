@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="./components/saleCRUD/saleCRUD.css">
 
-<h1>Sale Detail Control Board</h1>
+<h1 class="screen-title">Sale Detail Control Board</h1>
+
 <table id="saleDetailsTable">
     <thead>
         <tr>
@@ -9,28 +10,8 @@
             <th>Product ID</th>
             <th>Quantity</th>
             <th>Unit Price</th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <!-- Rows will be added here dynamically -->
     </tbody>
 </table>
-<button onclick="showAddSaleDetailForm()">Add Sale Detail</button>
-
-<div id="saleDetailForm" class="hidden">
-    <h2 id="formTitle">Add Sale Detail</h2>
-    <form id="saleDetailCrudForm" onsubmit="handleFormSubmit(event)">
-        <input type="hidden" id="saleDetailID" name="saleDetailID">
-        <label for="saleID">Sale ID:</label>
-        <input type="text" id="saleID" name="saleID" required><br>
-        <label for="productID">Product ID:</label>
-        <input type="text" id="productID" name="productID" required><br>
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" step="1" required><br>
-        <label for="unitPrice">Unit Price:</label>
-        <input type="number" id="unitPrice" name="unitPrice" step="0.01" required><br>
-        <button type="submit">Submit</button>
-        <button type="button" onclick="hideForm()">Cancel</button>
-    </form>
-</div>

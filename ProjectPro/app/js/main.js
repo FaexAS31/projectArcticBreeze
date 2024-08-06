@@ -19,7 +19,7 @@ window.addEventListener("load", load);
 
 // Load document
 function load() {
-  console.log("Loading Main...");
+  //console.log("Loading Main...");
   // Loading components
   // loadComponent({
   //     parent: 'header-left',

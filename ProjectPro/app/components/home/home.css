@@ -106,6 +106,8 @@ h1, h2, h3, h4, h5, h6{
 
 .padding_1x{
     padding:1rem;
+    margin-bottom: 22px;
+    opacity: 0.88;
 }
 
 .padding_2x{
@@ -609,10 +611,11 @@ header article .title{
     font-weight:700;
 }
 
-header section{
-    width: 93%;
+header section {
+    width: 91%;
+    text-align: justify;
+    margin-left: 5%;
 }
-
 header section aside{
     position:relative;
 }

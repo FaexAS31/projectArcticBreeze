@@ -17,7 +17,7 @@ async function loadProducts() {
     tableBody.innerHTML = '';
 
     const products = await getProducts(); 
-    console.log(products);
+    //console.log(products);
 
     products.forEach((product, index) => {
         const row = document.createElement('tr');
@@ -25,12 +25,12 @@ async function loadProducts() {
             <td>${product.productID}</td>
             <td>${product.productName}</td>
             <td>${product.productType}</td>
-            <td>${product.description}</td>
+            <td id="description">${product.description}</td>
             <td>${product.price.toFixed(2)}</td>
             <td><img src="https://arcticbreeze.blob.core.windows.net/productocontenedor/${product.productImage}" alt="${product.productName}" width="50"></td>
             <td id="buttons">
-                <button class="edit-btn" data-id="${product.productID}">Edit</button>
-                <button class="delete-btn" data-id="${product.productID}">Delete</button>
+                <button class="btn-common edit-btn" data-id="${product.productID}">Edit</button>
+                <button class="btn-common delete-btn" data-id="${product.productID}">Delete</button>
             </td>
         `;
 
@@ -73,7 +73,7 @@ async function deleteFormProduct(productID) {
         confirmButtonText: "Remove",
         denyButtonText: `Cancel`,
     }).then(async (result) => {
-        console.log("Product ID: ", productID);
+        //console.log("Product ID: ", productID);
         if (result.isConfirmed) {
             await deleteProduct(productID);
             await loadProducts(); 

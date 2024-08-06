@@ -14,7 +14,7 @@ export async function addProduct(formData) {
         
         // Verificar contenido de formData
         for (let pair of formData.entries()) {
-            console.log(pair[0] + ': ' + pair[1]);
+            //console.log(pair[0] + ': ' + pair[1]);
         }
 
         const response = await fetch('https://arcticbreezeapi20240729165031.azurewebsites.net/api/Products', {
@@ -34,7 +34,7 @@ export async function addProduct(formData) {
 
 
 export async function deleteProduct(id) {
-    console.log('Delete', id);
+    //console.log('Delete', id);
     try {
         const response = await fetch('https://arcticbreezeapi20240729165031.azurewebsites.net/api/Products/' + id, {
             method: 'DELETE',
@@ -71,20 +71,20 @@ export async function updateProduct(id,formData) {
 export async function getNewID() {
     try {
         const products = await getProducts();
-        console.log(products);
+        //console.log(products);
 
         if (products.length === 0) {
             return "P001";
         }
 
         let lastID = products[products.length - 1].productID;
-        console.log(lastID);
+        //console.log(lastID);
         let position = lastID.indexOf('0');
 
         let newID = parseInt(lastID.slice(position + 1)) + 1;
-        console.log(newID);
+        //console.log(newID);
         newID = "P00" + newID;
-        console.log(newID + " final");
+        //console.log(newID + " final");
         return newID;
     } catch (error) {
         console.error('Error getting new ID:', error);

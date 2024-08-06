@@ -9,10 +9,10 @@ window.addEventListener("languageToggled", (event) => {
 
 
 export const init = () => {
-  console.log("Initializing sidemenu");
-  console.log("Language: " + language);
+  //console.log("Initializing sidemenu");
+  //console.log("Language: " + language);
   if(localStorage.getItem('login') === 'true'){
-    console.log("ACCESING SIDEBAR: "+localStorage.getItem('user'));
+    //console.log("ACCESING SIDEBAR: "+localStorage.getItem('user'));
     let user = JSON.parse(localStorage.getItem('user'));
     user = JSON.parse(user);
     drawMenu(user);
@@ -60,7 +60,7 @@ function drawMenuOption(option,user) {
     divSubMenuIcon.appendChild(subMenuIcon);
 
     option.submenu.forEach((submenu) => {
-      console.log(submenu);
+      //console.log(submenu);
       drawSubMenuOption(submenu, parent);
     });
   }
@@ -71,16 +71,16 @@ function drawMenuOption(option,user) {
 
   //events
   if (typeof option.url !== "undefined") {
-    console.log("After event listener");
+    //console.log("After event listener");
     divText.addEventListener("click", () => toggleContent(option));
   }
 
   function toogleSubMenuVisible() {
     if (subMenuIcon.className === "fa fa-angle-right") subMenuIcon.className = "fa fa-angle-down";
     else subMenuIcon.className = "fa fa-angle-right";
-    console.log("toogleSubMenuVisible");
+    //console.log("toogleSubMenuVisible");
     var divSubOptions = document.getElementsByClassName("divSubOption");
-    console.log(divSubOptions);
+    //console.log(divSubOptions);
     for (let i = 0; i < divSubOptions.length; i++) {
       if (divSubOptions[i].style.display === "none") {
         divSubOptions[i].style.display = "flex";
@@ -137,7 +137,7 @@ function updateMenuLanguage() {
 }
 
 export function toggleContent(option) {
-  console.log(option);
+  //console.log(option);
   const content = document.getElementById("content");
   content.innerHTML = "";
 

@@ -8,7 +8,7 @@ import { clearCart } from "../cart/cart.js";
 import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
 export const init = () => {
-	console.log("Initializing Login");
+	//console.log("Initializing Login");
 	showLogin();
 };
 
@@ -56,6 +56,7 @@ async function handleLogin(event) {
         let user = await validateUser(email, password);
 
         if (user != null) {
+            console.log("User logged in:", user);
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("login", true);
             
@@ -76,7 +77,7 @@ export function handleLogout() {
 	updateHeader();
     clearCart();
     location.reload();
-	console.log("User logged out");
+	//console.log("User logged out");
 }
 
 async function handleSignup(event) {
@@ -102,7 +103,7 @@ async function handleSignup(event) {
 
 function closeLogin() {
 	document.getElementById("login").remove();
-	console.log("Closing login...");
+	//console.log("Closing login...");
 	toggleContent(menu[0]);
 }
 

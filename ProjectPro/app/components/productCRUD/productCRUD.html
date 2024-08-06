@@ -1,48 +1,44 @@
 <link rel="stylesheet" href="./components/productCRUD/productCRUD.css">
 
-<h1>Products Control Board</h1>    
+<h1 class="screen-title">Products Control Board</h1>    
     <div id="productForm">
         <h2 id="formTitle">Add Product</h2>
         <form id="productCrudForm">
             <!-- <input type="hidden" id="productID" name="productID"> -->
-            <label for="productName">Product Name:</label>
-            <input type="text" id="productName" name="productName" required><br>
-            <select id="productType" name="productType" required>
-                <option value="">Select Type</option>
+            <input class="input" type="text" id="productName" name="productName" placeholder="Product Name:" required><br>
+            <select class="input" id="productType" name="productType" required>
+                <option value="">Select Product Type</option>
                 <option value="product">Product</option>
                 <option value="installation">Installation</option>
             </select><br>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" required></textarea><br>
-            <label for="price">Price:</label>
-            <input type="number" id="price" name="price" step="0.01" required><br>
-            <label for="productImage">Product Image:</label>
-            <input type="file" accept="image/*" id="productImage" name="productImage" required><br>
-            <button type="submit">Submit</button>
-            <button type="button" id="hide-form">Cancel</button>
+            <textarea class="input" id="description" name="description" placeholder="Description" required></textarea><br>
+            <input class="input" type="number" id="price" name="price" step="0.01" placeholder="Price" required><br>
+            <input class="input" type="file" accept="image/*" id="productImage" name="productImage" placeholder="Upload Product Image" required><br>
+            <button class="btn-common add-btn" type="submit">ADD</button>
         </form>
     </div>
     
     <div id="editProductForm" class="overlay hidden">
         <div class="form-container">
             <h2 id="editFormTitle">Edit Product</h2>
-            <form id="productEditForm">
-                <input type="hidden" id="editProductID" name="productID">
+            <form id="productEditForm" class="form">
+                <input class="input" type="hidden" id="editProductID" name="productID">
                 <label for="editProductName">Product Name:</label>
-                <input type="text" id="editProductName" name="productName" required><br>
-                <select id="editProductType" name="productType" required>
+                <input class="input" type="text" id="editProductName" name="productName" required> <br>
+                <label for="editProductType">Product Type:</label>
+                <select class="input" id="editProductType" name="productType" required>
                     <option value="">Select Type</option>
                     <option value="product">Product</option>
                     <option value="installation">Installation</option>
                 </select><br>
                 <label for="editDescription">Description:</label>
-                <textarea id="editDescription" name="description" required></textarea><br>
+                <textarea class="input" id="editDescription" name="description" required></textarea><br>
                 <label for="editPrice">Price:</label>
-                <input type="number" id="editPrice" name="price" step="0.01" required><br>
+                <input class="input" type="number" id="editPrice" name="price" step="0.01" required><br>
                 <label for="editProductImage">Product Image:</label>
-                <input type="file" accept="image/*" id="editProductImage" name="productImage"><br>
-                <button type="submit">Submit</button>
-                <button type="button" id="hide-edit-form">Cancel</button>
+                <input class="input" type="file" accept="image/*" id="editProductImage" name="productImage"><br>
+                <button class="btn-common formBtn submit-btn" type="submit">Submit</button>
+                <button class="btn-common formBtn cancel-btn" type="button" id="hide-edit-form">Cancel</button>
             </form>
         </div>
     </div>
@@ -52,7 +48,7 @@
                 <th>Product ID</th>
                 <th>Product Name</th>
                 <th>Product Type</th>
-                <th>Description</th>
+                <th id="description">Description</th>
                 <th>Price</th>
                 <th>Product Image</th>
                 <th>Actions</th>

@@ -6,20 +6,20 @@ import { menu } from '../sidemenu/settings.js';
 var total = 0;
 
 export const init = () => {
-  console.log("Initializing Cart...");
+  //console.log("Initializing Cart...");
   getProducts().then((response) => {
-    console.log(response);
+    //console.log(response);
     if (response)showCart(response);
   });
 };
 
 function showCart(data) {
-    console.log('Showing Products...');
+    //console.log('Showing Products...');
     if(document.getElementById('cart-screen') !== null) {
       let storedProductCounts = JSON.parse(localStorage.getItem('productCounts')) || {};
       let selectedProductIds = Object.keys(storedProductCounts);
 
-      console.log('Selected Product Ids:', selectedProductIds);
+      //console.log('Selected Product Ids:', selectedProductIds);
       if (selectedProductIds.length === 0) {
         
         document.getElementById('content-cart').style.height = '75%';
@@ -41,7 +41,7 @@ function showCart(data) {
       let template = document.getElementById('template-product');
 
       if (!template) {
-          console.log('Template element template-product not found');
+          //console.log('Template element template-product not found');
           return;
       }
 
@@ -52,7 +52,7 @@ function showCart(data) {
 
       data.forEach(d => {
           if (selectedProductIds.includes(d.productID.toString())) {
-          console.log(d);
+          //console.log(d);
 
           let templateContent = template.content.cloneNode(true);
           templateContent.querySelector('#product-name').textContent = d.productName;

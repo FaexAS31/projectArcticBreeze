@@ -4,31 +4,31 @@ import Swal from 'https://cdn.skypack.dev/sweetalert2';
 import { toggleContent } from "../sidemenu/sidemenu.js";
 
 export const init = () => {
-  console.log("Initializing Products...");
+  //console.log("Initializing Products...");
   getProducts().then((response) => {
-    console.log(response);
+    //console.log(response);
     if (response) showProducts(response);
   });
 };
 
 
 function showProducts(data) {
-    console.log('Showing Products...');
+    //console.log('Showing Products...');
     let template = document.getElementById('template-product');
     if (!template) {
-        console.log('Template element not found');
+        //console.log('Template element not found');
         return;
     }
     let fragment = document.createDocumentFragment();
     var index = 0;
 
     data.forEach(d => {
-        console.log(d);
+        //console.log(d);
 
         let templateContent = template.content.cloneNode(true);
         templateContent.querySelector('#product-name').textContent = d.productName;
         templateContent.querySelector('#product-price').textContent = "$"+d.price;
-        console.log("https://arcticbreeze.blob.core.windows.net/productocontenedor/"+d.productImage);
+        //console.log("https://arcticbreeze.blob.core.windows.net/productocontenedor/"+d.productImage);
         if(d.productImage == null || d.productImage == ""){
           templateContent.querySelector('#product-img').src = "../../api/photos/products/ac_model_x.jpeg";
         }else{
@@ -77,7 +77,7 @@ function handleProductSelection(productId) {
     
       localStorage.setItem('productCounts', JSON.stringify(counts));
     
-      console.log(`Product ${productId} selected ${counts[productId]} times.`);
+      //console.log(`Product ${productId} selected ${counts[productId]} times.`);
       Swal.fire("Product Added!", "", "success");
     } 
   });
@@ -90,7 +90,7 @@ function loadProductDetails(productId) {
 
       if (product) {
 
-          console.log(`Viewing product details for product ${productId}`);
+          //console.log(`Viewing product details for product ${productId}`);
 
           localStorage.setItem('productDetails', JSON.stringify(product));
         
