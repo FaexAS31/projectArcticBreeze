@@ -3,6 +3,10 @@
     margin: 0;
     font-family: var(--normal-text);
 }
+
+#content{
+    overflow: auto;
+}
 :root {
     /* Modules */
     --home: #F44336;

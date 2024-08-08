@@ -121,3 +121,7 @@ div:where(.swal2-container).swal2-center>.swal2-popup {
     font-family: var(--normal-text);
 
 }
+
+#content{
+    height: auto;
+}
